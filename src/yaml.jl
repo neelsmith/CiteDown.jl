@@ -1,4 +1,8 @@
 
+"""Extract YAML header from a string.
+
+$(SIGNATURES)
+"""
 function header(src)
     lines = split(src, "\n")
     yamllines = []
@@ -15,6 +19,10 @@ function header(src)
     join(yamllines, "\n")
 end
 
+"""Create document settings object from a string source.
+
+$(SIGNATURES)
+"""
 function settings(src)
     yaml = header(src) |> YAML.load
 end
