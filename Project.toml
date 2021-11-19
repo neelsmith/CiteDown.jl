@@ -1,0 +1,10 @@
+name = "CiteDown"
+uuid = "31ece079-7405-46d1-96b6-7aef44ad4713"
+authors = ["Neel Smith <dnsmith.neel@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+CommonMark = "a80b9123-70ca-4bc0-993e-6e3bcb318db6"
+
+[compat]
+CommonMark = "0.8"
