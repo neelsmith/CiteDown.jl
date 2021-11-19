@@ -2,6 +2,6 @@ module CiteDown
 
 using CommonMark
 
-greet() = print("Hello World!")
+include("yaml.jl")
 
 end # module
