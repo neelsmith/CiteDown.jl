@@ -14,6 +14,7 @@ iiif:
     
 Text body follows
 """
-    yaml = CiteDown.settings(src)
-    @test yaml["ict"] == "http://www.homermultitext.org/ict2/?"
+    yaml = CiteDown.settings(split(src, "\n"))
+    @test yaml isa CiteDown.Settings
+    @test yaml.ict == "http://www.homermultitext.org/ict2/?"
 end

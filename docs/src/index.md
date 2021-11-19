@@ -8,6 +8,10 @@ TBA
 ## Docstrings
 
 ```@docs
+rewrite
+```
+
+```@docs
 CiteDown.header
 CiteDown.settings
 ```
