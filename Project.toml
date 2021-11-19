@@ -4,7 +4,12 @@ authors = ["Neel Smith <dnsmith.neel@gmail.com>"]
 version = "0.1.0"
 
 [deps]
+CitableImage = "17ccb2e5-db19-44b3-b354-4fd16d92c74e"
+CitableObject = "e2b2f5ea-1cd8-4ce8-9b2b-05dad64c2a57"
 CommonMark = "a80b9123-70ca-4bc0-993e-6e3bcb318db6"
 
 [compat]
+CitableImage = "0.3"
+CitableObject = "0.8"
 CommonMark = "0.8"
+julia = "1"
