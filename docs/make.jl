@@ -17,6 +17,7 @@ makedocs(
     sitename="CiteDown.jl",
     pages = [
         "Guide" => "index.md",
+        "API" => "api.md"
     ],
     )
 
