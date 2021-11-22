@@ -7,5 +7,5 @@ rewrite
 
 ```@docs
 CiteDown.header
-CiteDown.settings
+Settings
 ```

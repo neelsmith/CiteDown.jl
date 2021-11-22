@@ -4,5 +4,5 @@ struct Settings
     ict
     iiifurl
     iiifpath
-    maxwidth::Int
+    maxheight::Int
 end

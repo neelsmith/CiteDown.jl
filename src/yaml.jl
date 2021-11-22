@@ -1,8 +1,41 @@
+"""Split markdown file into YAML header and markdown body.
+Returns a tuple of 2 strings.  If there is no YAML header, 
+the first string will be empty.
+
+$(SIGNATURES)
+"""
+function pageparts(f)
+    lines = readlines(f)
+    yaml = []
+    markdown = []
+    index = 1
+    inheader = false
+   
+    for l in lines
+        if inheader
+            if l == "---"
+                inheader = false
+            else
+                push!(yaml, l)  
+            end
+
+        else
+            if l == "---"
+                inheader = true
+            else
+                push!(markdown, l)  
+            end
+        end
+    end
+    (join(yaml, "\n"), join(markdown, "\n"))
+end
+
 
 """Extract YAML header from a Vector of string values.
 
 $(SIGNATURES)
 """
+#=
 function header(lines)
     yamllines = []
     begun = false
@@ -19,13 +52,14 @@ function header(lines)
     end
     join(yamllines, "\n")
 end
+=#
 
 """Create document settings object from a string source.
 
 $(SIGNATURES)
 """
 function settings(src)
-    yaml = header(src) |> YAML.load
+    yaml = isempty(src) ? nothing : YAML.load(src)
 
     ict = haskey(yaml, "ict") ? yaml["ict"] : nothing
    
@@ -43,7 +77,7 @@ function settings(src)
 
     maxwidth = haskey(yaml, "maxwidth") ? yaml["maxwidth"] : 500
 
-    CiteDown.Settings(
+    Settings(
         ict,
         iiifurl,
         iiifpath,
