@@ -6,3 +6,11 @@ struct Settings
     iiifpath
     maxheight::Int
 end
+
+"""Initialize a `Settings` instance with empty values.
+
+$(SIGNATURES)
+"""
+function null_settings()
+    Settings("","","",0)
+end

@@ -31,56 +31,39 @@ function pageparts(f)
 end
 
 
-"""Extract YAML header from a Vector of string values.
-
-$(SIGNATURES)
-"""
-#=
-function header(lines)
-    yamllines = []
-    begun = false
-    #@info("ARRAY ", lines)
-    for l in lines
-        #@info("LINE" , l)
-        if strip(l) == "---" 
-            begun ? break : begun = true
-        else
-            if begun 
-                push!(yamllines, l)
-            end
-        end
-    end
-    join(yamllines, "\n")
-end
-=#
 
 """Create document settings object from a string source.
 
 $(SIGNATURES)
 """
 function settings(src)
-    yaml = isempty(src) ? nothing : YAML.load(src)
+    if isempty(src)
+        nullSettings()
+    else
 
-    ict = haskey(yaml, "ict") ? yaml["ict"] : nothing
-   
-    iiifurl = nothing
-    if haskey(yaml, "iiif") 
-        dict = yaml["iiif"] 
-        iiifurl = haskey(dict, "service") ? dict["service"] : nothing
+        yaml = YAML.load(src)
+
+        ict = haskey(yaml, "ict") ? yaml["ict"] : nothing
+    
+        iiifurl = nothing
+        if haskey(yaml, "iiif") 
+            dict = yaml["iiif"] 
+            iiifurl = haskey(dict, "service") ? dict["service"] : nothing
+        end
+            
+        iiifpath = nothing
+        if haskey(yaml, "iiif") 
+            dict = yaml["iiif"] 
+            iiifpath = haskey(dict, "path") ? dict["path"] : nothing
+        end
+
+        maxheight = haskey(yaml, "maxheight") ? yaml["maxheight"] : 500
+
+        Settings(
+            ict,
+            iiifurl,
+            iiifpath,
+            maxheight
+        )
     end
-        
-    iiifpath = nothing
-    if haskey(yaml, "iiif") 
-        dict = yaml["iiif"] 
-        iiifpath = haskey(dict, "path") ? dict["path"] : nothing
-    end
-
-    maxwidth = haskey(yaml, "maxwidth") ? yaml["maxwidth"] : 500
-
-    Settings(
-        ict,
-        iiifurl,
-        iiifpath,
-        maxwidth
-    )
 end

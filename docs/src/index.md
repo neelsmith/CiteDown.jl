@@ -53,10 +53,29 @@ ict: "http://www.homermultitext.org/ict2/?"
 iiif:
     service: "http://www.homermultitext.org/iipsrv"
     path: "/project/homer/pyramidal/deepzoom"
-maxwidth: 500
+maxheight: 500
 ---
 ```
 
 ## Generating new markdown resolved to URL values
 
-TBA
+```@setup example
+repository = pwd() |> dirname |> dirname
+```
+
+The `rewrite` function takes a file name, and composes a new markdown string.  Compare the source file with the rewritten version.
+
+Source:
+
+```@example example
+mdfile = joinpath(repository, "test", "data", "img.md")
+read(mdfile, String) |> print
+```
+
+Rewritten:
+
+```@example example
+using CiteDown
+withurls = rewrite(mdfile) 
+print(withurls)
+```
