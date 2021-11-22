@@ -35,6 +35,7 @@ function urlize(md, cdsettings::Settings)
         if enter
             if node.t isa CommonMark.Image
                 linked = linkedMarkdownImage(node.t.destination, cdsettings)
+                node.t.destination = linked
                 #@info("Rewrite image ", node.t.destination, linked) 
             end
         end
