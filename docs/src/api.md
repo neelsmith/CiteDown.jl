@@ -1,27 +1,28 @@
 
 # API
 
-The one function you need to convert URNs to URLs in a markdown source:
-
-```@docs
-rewrite
-```
-
-A publicly exported function so that `linkedMarkdownImage` can work from a URN and a `CiteDown.Settings` instance.
-
-```@docs
-linkedMarkdownImage
-```
-
-## Internal structures and functions
+Structure for settings:
 
 ```@docs
 CiteDown.Settings
 ```
 
+Exported functions:
+
+```@docs
+rewrite
+settings
+```
+
+
+## Internal structures and functions
+
+
+
 ```@docs
 CiteDown.pageparts
-CiteDown.settings
-CiteDown.null_settings
+CiteDown.iiifservice
+CiteDown.rewrite_img
 CiteDown.urlize
+CiteDown.ast2markdown
 ```

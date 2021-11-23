@@ -1,4 +1,4 @@
-"""Rewrite contents of file f with URNs
+"""Rewrite contents of file `f` with URNs
 replaced by URLs if they are configured
 for citable services in the file's YAML header.
 
@@ -18,8 +18,13 @@ function iiifservice(cdsettings::CiteDown.Settings)
 end
 
 
+"""Rewrite contents of node `n` with URNs
+replaced by URLs if they are configured
+for citable services in the file's YAML header.
 
-function rewrite_img(n,cdsettings::CiteDown.Settings)
+$(SIGNATURES)
+"""
+function rewrite_img(n::CommonMark.Node, cdsettings::CiteDown.Settings)
     iiif = iiifservice(cdsettings)
     u = Cite2Urn(n.t.destination)
     imgdest = url(u, iiif, ht = cdsettings.maxheight)
@@ -38,7 +43,6 @@ function rewrite_img(n,cdsettings::CiteDown.Settings)
     CommonMark.append_child(ictnode, newimg)
 
     CommonMark.insert_before(n, ictnode)
-  
 end
 
 """Convert URNs in markdown image references to URL values.
