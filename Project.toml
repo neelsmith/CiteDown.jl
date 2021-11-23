@@ -1,7 +1,7 @@
 name = "CiteDown"
 uuid = "31ece079-7405-46d1-96b6-7aef44ad4713"
 authors = ["Neel Smith <dnsmith.neel@gmail.com>"]
-version = "0.1.0"
+version = "0.2.0"
 
 [deps]
 CitableImage = "17ccb2e5-db19-44b3-b354-4fd16d92c74e"

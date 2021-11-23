@@ -7,10 +7,16 @@ struct Settings
     maxheight::Int
 end
 
-"""Initialize a `Settings` instance with empty values.
+
+"""Instantiate a `Settings` object with reasonable default values.
 
 $(SIGNATURES)
 """
-function null_settings()
-    Settings("","","",0)
+function settings()
+    Settings(
+        "http://www.homermultitext.org/ict2/?",
+        "http://www.homermultitext.org/iipsrv",
+        "/project/homer/pyramidal/deepzoom",
+        500
+    )
 end

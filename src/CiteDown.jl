@@ -1,14 +1,9 @@
 module CiteDown
 
-import CitableImage: linkedMarkdownImage
-
 using CommonMark
 using YAML
 using CitableObject
 using CitableImage
-
-
-export linkedMarkdownImage
 
 using Documenter, DocStringExtensions
 
@@ -18,5 +13,6 @@ include("rewrite.jl")
 
 
 export rewrite
+export settings
 
 end # module
