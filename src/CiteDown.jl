@@ -14,7 +14,7 @@ using Documenter, DocStringExtensions
 
 include("settings.jl")
 include("yaml.jl")
-include("retrievable.jl")
+include("rewrite.jl")
 
 
 export rewrite
