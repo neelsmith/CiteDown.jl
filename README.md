@@ -30,7 +30,7 @@ Highlighted title:
 [![Rewrittten link to title](http://www.homermultitext.org/iipsrv?IIIF=/project/homer/pyramidal/deepzoom/hmt/vaimg/2017a/VA001RN_0002.tif/pct:16.39,16.67,47.38,4.948/500,/0/default.jpg)](http://www.homermultitext.org/ict2/?urn=urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1639,0.1667,0.4738,0.04948)
 ```
 
-[![Rewrittten link to title](http://www.homermultitext.org/iipsrv?IIIF=/project/homer/pyramidal/deepzoom/hmt/vaimg/2017a/VA001RN_0002.tif/pct:16.39,16.67,47.38,4.948/500,/0/default.jpg)](http://www.homermultitext.org/ict2/?urn=urn:cite2:hmt:vaimg.2017a:VA001RN_0002@0.1639,0.1667,0.4738,0.04948)
+
 
 
 In a markdown environment like a github repository's README, that produces something like the following, with the embedded image linked to an external image browser.
