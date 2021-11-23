@@ -5,7 +5,7 @@ Use URNs in markdown links.  The current version supports citing images by URN a
 
 ## Quick example
 
-Write markdown like this:
+### Write markdown like this
 
 ```
 ---
@@ -22,7 +22,9 @@ Highlighted title:
 ```
 
 
-Generate markdown with embedded images.  Configuring the `ict` setting means that the displayed image will also be linked to an interactive image browser.
+### Generate markdown like this
+
+Use the `rewrite` function to generate markdown with embedded images.Configuring the `ict` setting means that the displayed image will also be linked to an interactive image browser.
 
 ```
 Highlighted title:
@@ -31,7 +33,7 @@ Highlighted title:
 ```
 
 
-
+### What you get
 
 In a markdown environment like a github repository's README, that produces something like the following, with the embedded image linked to an external image browser.
 
