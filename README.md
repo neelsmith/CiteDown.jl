@@ -44,7 +44,7 @@ In a markdown environment like a github repository's README, that produces somet
 
 ## Setting up a command-line script
 
-Create a file with the following contents:
+Although you can use the CiteDown package's `rewrite` function in larger Julia programs, it can be handy to have a script you run from the command line to convert a markdown file with URN references to markdown with URLs.  Create a file with the following contents:
        
 ```julia
 using CiteDown
@@ -53,7 +53,7 @@ for f in ARGS
 end
 ```
 
-Then define an alias for your shell that invokes julia with options to optimize startup time.  If you created the file in `/usr/local/bin/citedown.jl` and are using `bash` or `zs` for your shell, define an alias like this:
+Then define an alias for your shell that invokes julia with options to optimize startup time.  If you created the script file in `/usr/local/bin/citedown.jl` and are using `bash` or `zsh` for your shell, you can define an alias like this:
 
 
 
