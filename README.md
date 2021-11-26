@@ -3,7 +3,13 @@
 Use URNs in markdown links.  The current version supports citing images by URN and using a [citable image service](https://cite-architecture.github.io/CitableImage.jl/stable/) to resolve URNs to image data.
 
 
+
+
+
 ## Quick example
+
+(See the [documentation](https://neelsmith.github.io/CiteDown.jl/stable/) for full information.)
+
 
 ### Write markdown like this
 
