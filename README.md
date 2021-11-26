@@ -61,5 +61,5 @@ Then define an alias for your shell that invokes julia with options to optimize 
  
 You can then use the simple `citedown` alias from the command line. Redirect its output to create a new markdown file with URNs replaced by URLs:
  
-    citedown FILE.md > NEWFILE.md`
+    citedown FILE.md > NEWFILE.md
  
